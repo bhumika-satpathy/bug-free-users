@@ -3,6 +3,7 @@ const axios = require('axios');
 
 const {GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLList, GraphQLNonNull} = graphql;
 
+// A company schema which gives information about company details stored in the database 
 const CompanyType = new GraphQLObjectType({
     name: 'Company',
     fields: () => ( {
@@ -19,6 +20,7 @@ const CompanyType = new GraphQLObjectType({
     })
 })
 
+// A user schema which gives information about user data stored in the database 
 const UserType = new GraphQLObjectType({
     name: 'User',
     fields: () => ({
@@ -35,6 +37,7 @@ const UserType = new GraphQLObjectType({
     })
 })
 
+// Rootquery is the entry point for any query in the graphql application. 
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
@@ -57,6 +60,7 @@ const RootQuery = new GraphQLObjectType({
     }
 })
 
+// In order to mutate data, use the mutate field of the GraphQLSchema
 const mutation = new GraphQLObjectType({
     name: 'Mutation',
     fields: {
